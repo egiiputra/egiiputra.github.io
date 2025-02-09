@@ -1,7 +1,19 @@
 ---
-import LetterGlitch from "../React/LetterGlitch.tsx";
-import LogoWall from "../components/logoWall.astro";
 import SkillsList from "../React/SkillsList.tsx";
+const technologies = [
+  "astro",
+  "react",
+  "typeScript",
+  "tailwindcss",
+  "nodejs",
+  "HTML5",
+  "CSS3",
+  "javaScript",
+  "git",
+  "supabase",
+  "mysql",
+  "bash"
+];
 ---
 
 <section class="text-[var(--white)] mt-12 md:mt-0" id="home">
@@ -36,21 +48,33 @@ import SkillsList from "../React/SkillsList.tsx";
         </a>
       </div>
     </div>
-
-    <LogoWall />
   
-    <div class="flex flex-col lg:flex-row items-center gap-8">
+    <div class="flex flex-col lg:flex-row items-start gap-8">
       <SkillsList client:load />
-      <div class="flex justify-center md:w-full md:h-[292px] size-[290px] pt-3 md:pt-9 md:ml-16">
-        <LetterGlitch
-          client:load
-          glitchColors={["#5e4491", "#A476FF", "#241a38"]}
-          glitchSpeed={33}
-          centerVignette={false}
-          outerVignette={true}
-          smooth={true}
-        />
+
+      <div class="text-left pt-3 md:pt-9">
+        <h3 class="text-[var(--white)] text-3xl md:text-4xl font-semibold md:mb-6">Technologies I used</h3>
+        <div class="flex flex-wrap gap-x-8 gap-y-0 md:gap-20">
+          {technologies.map((tech) => (
+            <div class="flex items-center gap-2 group">
+              <img
+                src={`/svg/${tech}.svg`}
+                alt={tech}
+                class="h-7 w-auto object-contain transition-transform group-hover:scale-110 opacity-60"
+                width="30"
+                height="30"
+                loading="lazy"
+              />
+              <span class="text-lg font-medium text-[var(--white-icon)]">
+                {tech.charAt(0).toUpperCase() + tech.slice(1)}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
+      <!-- <div class="flex justify-center md:w-full md:h-[292px] size-[290px] pt-3 md:pt-9 md:ml-16">
+        
+      </div> -->
     </div>
   </div>
 </section>
