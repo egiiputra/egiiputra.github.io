@@ -1,24 +1,23 @@
 ---
 import { Image } from "astro:assets";
 import svgl from "../../public/svgl.png";
-import stockin from "../../public/stockin.png";
+import belibis from "../../public/belibis.png";
 
 interface Project {
   title: string;
   image: ImageMetadata;
   link: string;
   preview: string;
-  status: string;
 }
 
 const projects: Project[] = [
-  // {
-  //   title: "StockIn",
-  //   image: stockin as ImageMetadata,
-  //   link: "https://github.com/gothsec/stockin-demo",
-  //   preview: "https://stockin-demo.vercel.app",
-  //   status: "In Development",
-  // },
+  {
+    title: "Belibis",
+    image: belibis as ImageMetadata,
+    link: "https://github.com/egiiputra/belibis-trunojoyo",
+    preview: "https://belibis.trunojoyo.ac.id/public/",
+    // status: "In Development",
+  },
   // {
   //   title: "Svgl.app",
   //   image: svgl as ImageMetadata,
