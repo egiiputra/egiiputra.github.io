@@ -2,28 +2,44 @@
 import { Image } from "astro:assets";
 import svgl from "../../public/svgl.png";
 import belibis from "../../public/belibis.png";
+import nanourl from "../../public/nanourl.png"
 
 interface Project {
   title: string;
   image: ImageMetadata;
   link: string;
-  preview: string;
+  preview: string | null;
+  techs: string[];
 }
 
 const projects: Project[] = [
   {
-    title: "Belibis",
+    title: "Belibis Trunojoyo",
     image: belibis as ImageMetadata,
     link: "https://github.com/egiiputra/belibis-trunojoyo",
     preview: "https://belibis.trunojoyo.ac.id/public/",
-    // status: "In Development",
+    techs: ['PHP', 'CodeIgniter', 'MySQL'],
+  },
+  {
+    title: "Nano URL",
+    image: nanourl as ImageMetadata,
+    link: "https://github.com/egiiputra/nano-url",
+    preview: null,
+    techs: ['PHP', 'Laravel', 'postgreSQL'],
+  },
+  {
+    title: "Leukemia classification",
+    image: nanourl as ImageMetadata,
+    link: "https://github.com/egiiputra/nano-url",
+    preview: null,
+    techs: ['PHP', 'Laravel', 'postgreSQL'],
   },
   // {
-  //   title: "Svgl.app",
-  //   image: svgl as ImageMetadata,
-  //   link: "https://github.com/pheralb/svgl",
-  //   preview: "https://svgl.app",
-  //   status: "Contributor",
+  //   title: "Resumable File Upload",
+  //   image: 'lol',
+  //   link: 'https://github.com/egiiputra/resumable-upload',
+  //   preview: null,
+  //   techs: ['nodejs', 'nestjs', 'react', 'sqlite'],
   // },
 ];
 ---
@@ -43,7 +59,7 @@ const projects: Project[] = [
               rel="noopener noreferrer"
               class="block"
             >
-              <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4">
+              <div class="rounded-md overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -53,6 +69,11 @@ const projects: Project[] = [
               <div class="flex items-center px-3">
                 <div class="flex-grow">
                   <h4 class="text-2xl font-semibold">{project.title}</h4>
+                  <div class="mt-2">
+                    {project.techs.map((tech) => (
+                      <span class="border border-[var(--white-icon-tr)] mr-2 p-2 rounded-l text-white-600">{tech}</span>
+                    ))}
+                  </div>
                   {/* <span class="py-1 text-sm text-[var(--white-icon)]">
                     {project.status}
                   </span> */}
@@ -68,16 +89,18 @@ const projects: Project[] = [
                       <path d="M24 12L18.3431 17.6569L16.9289 16.2426L21.1716 12L16.9289 7.75736L18.3431 6.34315L24 12ZM2.82843 12L7.07107 16.2426L5.65685 17.6569L0 12L5.65685 6.34315L7.07107 7.75736L2.82843 12ZM9.78845 21H7.66009L14.2116 3H16.3399L9.78845 21Z"></path>
                     </svg>
                   </a>
-                  <a 
-                    target="_blank" 
-                    href={project.preview} 
-                    aria-label="Preview" 
-                    class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-7">
-                      <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path>
-                    </svg>
-                  </a>
+                  {project.preview && (
+                    <a 
+                      target="_blank" 
+                      href={project.preview} 
+                      aria-label="Preview" 
+                      class="size-14 flex justify-center items-center text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-1 border-[var(--white-icon-tr)] p-3 rounded-xl bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-7">
+                        <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path>
+                      </svg>
+                    </a>
+                  )}
                 </div>
               </div>
             </a>
