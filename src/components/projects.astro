@@ -46,34 +46,25 @@ const projects: Project[] = [
     <h3 class="text-4xl md:text-5xl font-medium mb-8">Projects</h3>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {
-        projects.map((project) => (
-          <div class="group">
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="block"
-            >
-              <div class="rounded-md overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  class="w-full h-48 md:h-72 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <div class="w-full flex items-center">
-                <a href={project.link} class="text-2xl font-semibold">{project.title}</a>
-                <div class="flex flex-wrap mt-2">
-                  {project.techs.map((tech) => (
-                    <span class="bg-gray-800 mr-2 mb-2 px-2 py-1 rounded-l text-white">{tech}</span>
-                  ))}
-                  </div>
-              </div>
-            </a>
+      {projects.map((project) => (
+        <div class="group">
+          <div class="aspect-video rounded-md overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4">
+            <Image
+              src={project.image}
+              alt={project.title}
+              class="w-full object-cover"
+            />
           </div>
-        ))
-      }
+          <div class="w-full flex flex-col">
+            <a href={project.link} class="text-2xl font-semibold">{project.title}</a>
+            <div class="flex flex-wrap mt-2">
+              {project.techs.map((tech) => (
+                <span class="bg-gray-800 mr-2 mb-2 px-2 py-1 rounded-l text-white">{tech}</span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
     </div>
     <a
       target="_blank"
