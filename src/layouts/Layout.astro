@@ -13,18 +13,48 @@ const { title } = Astro.props;
     <meta name="description" content="Software Developer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=light_mode" />
     <title>{title}</title>
   </head>
-  <body class="w-full bg-[--background] md:px-48 lg:px-20 px-5">
+  <body class="w-full dark:bg-[--background] md:px-48 lg:px-20 px-5 light">
+    <!-- <nav class="fixed flex right-0 z-[100] bg-[#1414149c] border border-1 border-[var(--white-icon-tr)] backdrop-blur-xl transition-all md:top-0 md:bottom-auto bottom-0 md:w-[33rem] rounded-t-2xl md:rounded-full md:mt-6 md:justify-self-center">  
+      <div class="container mx-auto flex justify-center items-center p-3"> -->
+        <button class="fixed flex top-[24px] right-[24px] w-[48px] h-[48px] z-[100] bg-[#1414149c] items-center justify-center border border-1 border-[var(--white-icon-tr)] backdrop-blur-xl rounded-full text-black" id="theme-toggle"><span class="material-symbols-outlined">
+          light_mode
+          </span></button>
+      <!-- </div> -->
+    <!-- </nav> -->
     <slot />
 
+    <script is:inline>
+      const buttonToggle = document.getElementById('theme-toggle')
+      console.log(document.getElementById('theme-toggle'))
+      console.log(document.documentElement)
+      buttonToggle.addEventListener('click', function() {
+        console.log('tekan')
+        document.documentElement.classList.toggle("dark")
+      })
+    </script>
   </body>
 </html>
 
 <style is:global>
   @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
+  
   :root {
+    /* --background: #101010; */
+
+    --sec: #A476FF;
+
+    /* --white: #dfdfdf; */
+
+    /* --white-icon: #f3f3f398; */
+    --white-icon-tr: #f3f3f310;
+
+    --font: "montserrat", system-ui, sans-serif;
+  }
+
+  :root.dark {
     --background: #101010;
 
     --sec: #A476FF;
@@ -36,6 +66,7 @@ const { title } = Astro.props;
 
     --font: "montserrat", system-ui, sans-serif;
   }
+
 
   * {
     font-family: var(--font);
