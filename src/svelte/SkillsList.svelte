@@ -22,7 +22,6 @@ let openItem: string = $state('');
 const toggleItem = (item: string) => {
     openItem = (openItem === item) ? '' : item;
 };
-$inspect(openItem)
 
 </script>
 
@@ -33,7 +32,7 @@ $inspect(openItem)
         <li data-cateogry={category} class="w-full">
         <button
             onclick={() => toggleItem(category)}
-            class="md:w-[400px] w-full bg-[#1414149c] rounded-2xl text-left hover:bg-opacity-80 transition-all border border-[var(--white-icon-tr)] cursor-pointer overflow-hidden"
+            class="md:w-[400px] w-full bg-[--white-icon-tr] rounded-2xl text-left hover:bg-opacity-80 transition-all border border-[var(--white-icon-tr)] cursor-pointer overflow-hidden"
         >
             <div class="flex items-center gap-3 p-4">
             <div class="flex items-center gap-2 flex-grow justify-between">

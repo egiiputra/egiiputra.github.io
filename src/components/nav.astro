@@ -25,7 +25,7 @@ const navItems: NavItem[] = [
 ---
 
 <div class="flex justify-center w-full">
-  <nav class="max-w-full fixed flex left-0 right-0 z-[100] bg-[#1414149c] border border-1 border-[var(--white-icon-tr)] backdrop-blur-xl transition-all md:top-0 md:bottom-auto bottom-0 md:w-[33rem] rounded-t-2xl md:rounded-full md:mt-6 md:justify-self-center">  
+  <nav class="max-w-full fixed flex left-0 right-0 z-[100] bg-[--white-icon-tr] border border-1 border-[var(--white-icon-tr)] backdrop-blur-xl transition-all md:top-0 md:bottom-auto bottom-0 md:w-[33rem] rounded-t-2xl md:rounded-full md:mt-6 md:justify-self-center">  
     <div class="container mx-auto flex justify-center items-center p-3">
       <ul class="flex w-full justify-between md:space-x-6 md:justify-center md:gap-12 gap-6">
         {
@@ -33,7 +33,7 @@ const navItems: NavItem[] = [
             <li class="flex-1 md:flex-none">
               <a
                 href={item.href}
-                class="flex flex-col items-center gap-1 text-[var(--white-icon)] hover:text-white focus:text-white transition-colors text-xs md:text-base"
+                class="flex flex-col items-center gap-1 text-[var(--white-icon)] transition-colors text-xs md:text-base"
               >
                 <span class="md:hidden flex items-center justify-center w-6 h-6">
                   <fragment set:html={item.icon} />
@@ -96,6 +96,6 @@ const navItems: NavItem[] = [
   }
   
   nav a.active {
-    color: white !important;
+    color: var(--sec);
   }
 </style>

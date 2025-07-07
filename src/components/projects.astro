@@ -59,7 +59,7 @@ const projects: Project[] = [
             <a href={project.link} class="text-2xl font-semibold">{project.title}</a>
             <div class="flex flex-wrap mt-2">
               {project.techs.map((tech) => (
-                <span class="bg-gray-800 mr-2 mb-2 px-2 py-1 rounded-l text-white">{tech}</span>
+                <span class="bg-[--white-icon-tr] mr-2 mb-2 px-2 py-1 rounded-l text-[--white-icon]">{tech}</span>
               ))}
             </div>
           </div>
@@ -70,7 +70,7 @@ const projects: Project[] = [
       target="_blank"
       href="https://github.com/egiiputra?tab=repositories"
       aria-label="GitHub"
-      class="w-full flex items-center justify-center gap-2 mt-9 text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-full bg-[#1414149c] hover:bg-[var(--white-icon-tr)]"
+      class="w-full flex items-center justify-center gap-2 mt-9 text-[var(--white-icon)] hover:text-white transition duration-300 ease-in-out border border-[var(--white-icon-tr)] p-3 rounded-full bg-[--white-icon-tr] hover:bg-[var(--white-icon-tr)]"
     >
       <span class="md:text-lg text-md">More projects on</span>
       <svg
