@@ -1,6 +1,527 @@
 <template>
-  <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
+  <div class="min-h-screen bg-white dark:bg-primary-900 transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white dark:bg-primary-800 bg-opacity-95 dark:bg-opacity-95 border-b border-primary-200 dark:border-primary-700 z-50 backdrop-blur-sm">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+        <NuxtLink to="/" class="text-2xl font-bold font-mono">
+          <span class="terminal-bracket">&lt;</span><span>egiiputra</span><span class="terminal-bracket">/&gt;</span>
+        </NuxtLink>
+        <div class="flex gap-6 items-center">
+          <div class="flex gap-6 font-mono text-sm">
+            <a href="#home" class="text-primary-900 dark:text-primary-100 hover:text-green-600 dark:hover:text-green-400 transition">home</a>
+            <a href="#about" class="text-primary-900 dark:text-primary-100 hover:text-green-600 dark:hover:text-green-400 transition">about</a>
+            <a href="#experience" class="text-primary-900 dark:text-primary-100 hover:text-green-600 dark:hover:text-green-400 transition">experience</a>
+            <a href="#projects" class="text-primary-900 dark:text-primary-100 hover:text-green-600 dark:hover:text-green-400 transition">projects</a>
+            <a href="#skills" class="text-primary-900 dark:text-primary-100 hover:text-green-600 dark:hover:text-green-400 transition">skills</a>
+          </div>
+          <!-- Theme Toggle -->
+          <button @click="toggleTheme" class="p-2 rounded-lg bg-primary-100 dark:bg-primary-700 hover:bg-primary-200 dark:hover:bg-primary-600 transition">
+            <svg v-if="isDark" class="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg v-else class="w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v2a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.536l1.414 1.414a1 1 0 001.414-1.414l-1.414-1.414a1 1 0 00-1.414 1.414zm2.828-2.828l1.414-1.414a1 1 0 00-1.414-1.414l-1.414 1.414a1 1 0 001.414 1.414zm0-5.656l1.414 1.414a1 1 0 101.414-1.414l-1.414-1.414a1 1 0 10-1.414 1.414zM4.464 4.465l1.414-1.414a1 1 0 00-1.414-1.414L3.05 3.05a1 1 0 001.414 1.414z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-20">
+      <!-- Hero Section -->
+      <section id="home" class="min-h-screen flex items-center justify-center border-b border-primary-200 dark:border-primary-700 relative overflow-hidden py-20">
+        <!-- Grid background -->
+        <div class="absolute inset-0 opacity-10 dark:opacity-5">
+          <div class="grid grid-cols-12 h-full w-full">
+            <template v-for="i in 12" :key="i">
+              <div class="col-span-1 border-r border-primary-400 dark:border-primary-600"></div>
+            </template>
+          </div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+          <div class="mb-6 font-mono text-green-600 dark:text-green-400 text-xl">
+            <span class="inline-block animate-pulse">~ $ </span>
+          </div>
+          <h1 class="text-5xl md:text-7xl font-bold mb-4 font-mono">
+            <span class="terminal-bracket">&lt;</span> Developer <span class="terminal-bracket">/&gt;</span>
+          </h1>
+          <p class="text-2xl md:text-3xl text-primary-700 dark:text-primary-300 mb-8 font-mono">
+            Full Stack Developer | Problem Solver | Code Enthusiast
+          </p>
+          <p class="text-primary-600 dark:text-primary-400 max-w-2xl mx-auto mb-8 leading-relaxed text-lg">
+            Crafting elegant solutions to complex problems. Passionate about building scalable applications
+            and sharing knowledge with the community.
+          </p>
+          <div class="flex gap-4 justify-center flex-wrap">
+            <a href="#projects" class="btn-primary">
+              View My Work
+            </a>
+            <a href="#about" class="btn-secondary">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="min-h-screen flex items-center border-b border-primary-200 dark:border-primary-700 py-20">
+        <div class="max-w-4xl mx-auto px-4 w-full">
+          <h2 class="section-title">
+            <span class="terminal-prompt">$</span> About Me
+          </h2>
+          <div class="card">
+            <div class="font-mono text-sm text-green-600 dark:text-green-400 mb-4">
+              <span class="terminal-prompt">&gt;</span> whoami
+            </div>
+            <p class="text-primary-700 dark:text-primary-300 mb-6 leading-relaxed text-lg">
+              I'm a passionate Full Stack Developer with expertise in modern web technologies. 
+              With a strong foundation in computer science, I specialize in building responsive, 
+              user-centric applications that solve real-world problems.
+            </p>
+            <p class="text-primary-700 dark:text-primary-300 mb-6 leading-relaxed text-lg">
+              When I'm not coding, you can find me exploring new technologies, contributing to open-source 
+              projects, or sharing my knowledge with other developers. I believe in continuous learning 
+              and staying updated with industry trends.
+            </p>
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 class="text-green-600 dark:text-green-400 font-mono font-bold mb-4 text-lg">
+                  <span class="text-primary-600 dark:text-primary-400">#</span> Strengths
+                </h3>
+                <ul class="text-primary-700 dark:text-primary-300 space-y-2">
+                  <li class="flex items-center gap-2">
+                    <span class="text-green-600 dark:text-green-400">&gt;</span> Problem Solving
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="text-green-600 dark:text-green-400">&gt;</span> Code Quality
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="text-green-600 dark:text-green-400">&gt;</span> Team Collaboration
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="text-green-600 dark:text-green-400">&gt;</span> Quick Learning
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-green-600 dark:text-green-400 font-mono font-bold mb-4 text-lg">
+                  <span class="text-primary-600 dark:text-primary-400">#</span> Interests
+                </h3>
+                <ul class="text-primary-700 dark:text-primary-300 space-y-2">
+                  <li class="flex items-center gap-2">
+                    <span class="text-green-600 dark:text-green-400">&gt;</span> Web Development
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="text-green-600 dark:text-green-400">&gt;</span> Cloud Architecture
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="text-green-600 dark:text-green-400">&gt;</span> Open Source
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="text-green-600 dark:text-green-400">&gt;</span> Tech Mentoring
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience Section -->
+      <section id="experience" class="min-h-screen flex items-center border-b border-primary-200 dark:border-primary-700 py-20">
+        <div class="max-w-4xl mx-auto px-4 w-full">
+          <h2 class="section-title">
+            <span class="terminal-prompt">$</span> Experience
+          </h2>
+          <div class="space-y-8">
+            <!-- Experience Card 1 -->
+            <div class="card group">
+              <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                <div>
+                  <h3 class="text-2xl font-bold text-green-600 dark:text-green-400 font-mono">Senior Developer</h3>
+                  <p class="text-primary-600 dark:text-primary-400">Tech Company Inc.</p>
+                </div>
+                <span class="text-primary-500 dark:text-primary-400 font-mono mt-2 md:mt-0">2023 - Present</span>
+              </div>
+              <p class="text-primary-700 dark:text-primary-300 mb-4 leading-relaxed">
+                Led development of microservices architecture serving 100k+ users. Improved system performance 
+                by 40% through optimization and caching strategies.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-primary-100 dark:bg-primary-700 text-green-600 dark:text-green-400 rounded font-mono text-sm">React</span>
+                <span class="px-3 py-1 bg-primary-100 dark:bg-primary-700 text-green-600 dark:text-green-400 rounded font-mono text-sm">Node.js</span>
+                <span class="px-3 py-1 bg-primary-100 dark:bg-primary-700 text-green-600 dark:text-green-400 rounded font-mono text-sm">PostgreSQL</span>
+                <span class="px-3 py-1 bg-primary-100 dark:bg-primary-700 text-green-600 dark:text-green-400 rounded font-mono text-sm">AWS</span>
+              </div>
+            </div>
+
+            <!-- Experience Card 2 -->
+            <div class="card group">
+              <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                <div>
+                  <h3 class="text-2xl font-bold text-green-600 dark:text-green-400 font-mono">Full Stack Developer</h3>
+                  <p class="text-primary-600 dark:text-primary-400">Digital Solutions Ltd.</p>
+                </div>
+                <span class="text-primary-500 dark:text-primary-400 font-mono mt-2 md:mt-0">2021 - 2023</span>
+              </div>
+              <p class="text-primary-700 dark:text-primary-300 mb-4 leading-relaxed">
+                Developed and maintained web applications for clients across various industries. 
+                Implemented CI/CD pipelines reducing deployment time by 60%.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-primary-100 dark:bg-primary-700 text-green-600 dark:text-green-400 rounded font-mono text-sm">Vue.js</span>
+                <span class="px-3 py-1 bg-primary-100 dark:bg-primary-700 text-green-600 dark:text-green-400 rounded font-mono text-sm">Laravel</span>
+                <span class="px-3 py-1 bg-primary-100 dark:bg-primary-700 text-green-600 dark:text-green-400 rounded font-mono text-sm">MySQL</span>
+                <span class="px-3 py-1 bg-primary-100 dark:bg-primary-700 text-green-600 dark:text-green-400 rounded font-mono text-sm">Docker</span>
+              </div>
+            </div>
+
+            <!-- Experience Card 3 -->
+            <div class="card group">
+              <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4">
+                <div>
+                  <h3 class="text-2xl font-bold text-green-600 dark:text-green-400 font-mono">Junior Developer</h3>
+                  <p class="text-primary-600 dark:text-primary-400">StartUp XYZ</p>
+                </div>
+                <span class="text-primary-500 dark:text-primary-400 font-mono mt-2 md:mt-0">2020 - 2021</span>
+              </div>
+              <p class="text-primary-700 dark:text-primary-300 mb-4 leading-relaxed">
+                Contributed to frontend and backend development. Built REST APIs and responsive user interfaces 
+                for mobile and desktop applications.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-primary-100 dark:bg-primary-700 text-green-600 dark:text-green-400 rounded font-mono text-sm">JavaScript</span>
+                <span class="px-3 py-1 bg-primary-100 dark:bg-primary-700 text-green-600 dark:text-green-400 rounded font-mono text-sm">Python</span>
+                <span class="px-3 py-1 bg-primary-100 dark:bg-primary-700 text-green-600 dark:text-green-400 rounded font-mono text-sm">React</span>
+                <span class="px-3 py-1 bg-primary-100 dark:bg-primary-700 text-green-600 dark:text-green-400 rounded font-mono text-sm">MongoDB</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="min-h-screen flex items-center border-b border-primary-200 dark:border-primary-700 py-20">
+        <div class="max-w-4xl mx-auto px-4 w-full">
+          <h2 class="section-title">
+            <span class="terminal-prompt">$</span> Featured Projects
+          </h2>
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Project Card 1 -->
+            <div class="card group">
+              <div class="h-48 bg-gradient-to-br from-primary-200 to-primary-100 dark:from-primary-700 dark:to-primary-800 flex items-center justify-center mb-4 rounded">
+                <div class="text-6xl text-primary-400 dark:text-primary-600 group-hover:text-green-600 dark:group-hover:text-green-400 transition">
+                  &lt;/&gt;
+                </div>
+              </div>
+              <h3 class="text-xl font-bold text-green-600 dark:text-green-400 font-mono mb-2">Project Alpha</h3>
+              <p class="text-primary-700 dark:text-primary-300 mb-4 leading-relaxed">
+                A high-performance web application for data analytics and visualization with real-time updates.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-2 py-1 bg-primary-100 dark:bg-primary-700 text-green-600 dark:text-green-400 rounded font-mono text-xs">React</span>
+                <span class="px-2 py-1 bg-primary-100 dark:bg-primary-700 text-green-600 dark:text-green-400 rounded font-mono text-xs">D3.js</span>
+                <span class="px-2 py-1 bg-primary-100 dark:bg-primary-700 text-green-600 dark:text-green-400 rounded font-mono text-xs">WebSocket</span>
+              </div>
+              <div class="flex gap-4">
+                <a href="#" class="text-green-600 dark:text-green-400 hover:underline font-mono text-sm">View Project →</a>
+                <a href="#" class="text-primary-600 dark:text-primary-400 hover:text-green-600 dark:hover:text-green-400 font-mono text-sm transition">GitHub</a>
+              </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="card group">
+              <div class="h-48 bg-gradient-to-br from-primary-200 to-primary-100 dark:from-primary-700 dark:to-primary-800 flex items-center justify-center mb-4 rounded">
+                <div class="text-6xl text-primary-400 dark:text-primary-600 group-hover:text-green-600 dark:group-hover:text-green-400 transition">
+                  &lt;/&gt;
+                </div>
+              </div>
+              <h3 class="text-xl font-bold text-green-600 dark:text-green-400 font-mono mb-2">Project Beta</h3>
+              <p class="text-primary-700 dark:text-primary-300 mb-4 leading-relaxed">
+                E-commerce platform with advanced search, filtering, and payment integration capabilities.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-2 py-1 bg-primary-100 dark:bg-primary-700 text-green-600 dark:text-green-400 rounded font-mono text-xs">Vue.js</span>
+                <span class="px-2 py-1 bg-primary-100 dark:bg-primary-700 text-green-600 dark:text-green-400 rounded font-mono text-xs">Node.js</span>
+                <span class="px-2 py-1 bg-primary-100 dark:bg-primary-700 text-green-600 dark:text-green-400 rounded font-mono text-xs">Stripe</span>
+              </div>
+              <div class="flex gap-4">
+                <a href="#" class="text-green-600 dark:text-green-400 hover:underline font-mono text-sm">View Project →</a>
+                <a href="#" class="text-primary-600 dark:text-primary-400 hover:text-green-600 dark:hover:text-green-400 font-mono text-sm transition">GitHub</a>
+              </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="card group">
+              <div class="h-48 bg-gradient-to-br from-primary-200 to-primary-100 dark:from-primary-700 dark:to-primary-800 flex items-center justify-center mb-4 rounded">
+                <div class="text-6xl text-primary-400 dark:text-primary-600 group-hover:text-green-600 dark:group-hover:text-green-400 transition">
+                  &lt;/&gt;
+                </div>
+              </div>
+              <h3 class="text-xl font-bold text-green-600 dark:text-green-400 font-mono mb-2">Project Gamma</h3>
+              <p class="text-primary-700 dark:text-primary-300 mb-4 leading-relaxed">
+                Mobile-first task management application with collaborative features and notifications.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-2 py-1 bg-primary-100 dark:bg-primary-700 text-green-600 dark:text-green-400 rounded font-mono text-xs">React Native</span>
+                <span class="px-2 py-1 bg-primary-100 dark:bg-primary-700 text-green-600 dark:text-green-400 rounded font-mono text-xs">Firebase</span>
+                <span class="px-2 py-1 bg-primary-100 dark:bg-primary-700 text-green-600 dark:text-green-400 rounded font-mono text-xs">Redux</span>
+              </div>
+              <div class="flex gap-4">
+                <a href="#" class="text-green-600 dark:text-green-400 hover:underline font-mono text-sm">View Project →</a>
+                <a href="#" class="text-primary-600 dark:text-primary-400 hover:text-green-600 dark:hover:text-green-400 font-mono text-sm transition">GitHub</a>
+              </div>
+            </div>
+
+            <!-- Project Card 4 -->
+            <div class="card group">
+              <div class="h-48 bg-gradient-to-br from-primary-200 to-primary-100 dark:from-primary-700 dark:to-primary-800 flex items-center justify-center mb-4 rounded">
+                <div class="text-6xl text-primary-400 dark:text-primary-600 group-hover:text-green-600 dark:group-hover:text-green-400 transition">
+                  &lt;/&gt;
+                </div>
+              </div>
+              <h3 class="text-xl font-bold text-green-600 dark:text-green-400 font-mono mb-2">Project Delta</h3>
+              <p class="text-primary-700 dark:text-primary-300 mb-4 leading-relaxed">
+                DevOps automation tool for managing cloud infrastructure and monitoring system health.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="px-2 py-1 bg-primary-100 dark:bg-primary-700 text-green-600 dark:text-green-400 rounded font-mono text-xs">Python</span>
+                <span class="px-2 py-1 bg-primary-100 dark:bg-primary-700 text-green-600 dark:text-green-400 rounded font-mono text-xs">Kubernetes</span>
+                <span class="px-2 py-1 bg-primary-100 dark:bg-primary-700 text-green-600 dark:text-green-400 rounded font-mono text-xs">AWS</span>
+              </div>
+              <div class="flex gap-4">
+                <a href="#" class="text-green-600 dark:text-green-400 hover:underline font-mono text-sm">View Project →</a>
+                <a href="#" class="text-primary-600 dark:text-primary-400 hover:text-green-600 dark:hover:text-green-400 font-mono text-sm transition">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills Section -->
+      <section id="skills" class="min-h-screen flex items-center py-20">
+        <div class="max-w-4xl mx-auto px-4 w-full">
+          <h2 class="section-title">
+            <span class="terminal-prompt">$</span> Skills & Technologies
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Frontend -->
+            <div class="card">
+              <h3 class="text-2xl font-bold text-green-600 dark:text-green-400 font-mono mb-6">
+                <span class="text-primary-600 dark:text-primary-400">#</span> Frontend
+              </h3>
+              <div class="space-y-4">
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-primary-700 dark:text-primary-300">JavaScript / TypeScript</span>
+                    <span class="text-green-600 dark:text-green-400 font-mono">95%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 95%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-primary-700 dark:text-primary-300">React / Vue.js</span>
+                    <span class="text-green-600 dark:text-green-400 font-mono">90%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-primary-700 dark:text-primary-300">CSS / Tailwind</span>
+                    <span class="text-green-600 dark:text-green-400 font-mono">92%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 92%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-primary-700 dark:text-primary-300">HTML / Accessibility</span>
+                    <span class="text-green-600 dark:text-green-400 font-mono">88%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 88%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Backend -->
+            <div class="card">
+              <h3 class="text-2xl font-bold text-green-600 dark:text-green-400 font-mono mb-6">
+                <span class="text-primary-600 dark:text-primary-400">#</span> Backend
+              </h3>
+              <div class="space-y-4">
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-primary-700 dark:text-primary-300">Node.js / Express</span>
+                    <span class="text-green-600 dark:text-green-400 font-mono">88%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 88%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-primary-700 dark:text-primary-300">Python / Django</span>
+                    <span class="text-green-600 dark:text-green-400 font-mono">85%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-primary-700 dark:text-primary-300">PostgreSQL / MongoDB</span>
+                    <span class="text-green-600 dark:text-green-400 font-mono">90%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-primary-700 dark:text-primary-300">RESTful APIs</span>
+                    <span class="text-green-600 dark:text-green-400 font-mono">92%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 92%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- DevOps -->
+            <div class="card">
+              <h3 class="text-2xl font-bold text-green-600 dark:text-green-400 font-mono mb-6">
+                <span class="text-primary-600 dark:text-primary-400">#</span> DevOps & Tools
+              </h3>
+              <div class="space-y-4">
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-primary-700 dark:text-primary-300">Docker / Kubernetes</span>
+                    <span class="text-green-600 dark:text-green-400 font-mono">80%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 80%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-primary-700 dark:text-primary-300">AWS / Cloud</span>
+                    <span class="text-green-600 dark:text-green-400 font-mono">82%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 82%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-primary-700 dark:text-primary-300">Git / CI-CD</span>
+                    <span class="text-green-600 dark:text-green-400 font-mono">90%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-primary-700 dark:text-primary-300">Linux / Bash</span>
+                    <span class="text-green-600 dark:text-green-400 font-mono">85%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 85%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Other Skills -->
+            <div class="card">
+              <h3 class="text-2xl font-bold text-green-600 dark:text-green-400 font-mono mb-6">
+                <span class="text-primary-600 dark:text-primary-400">#</span> Other Skills
+              </h3>
+              <div class="space-y-4">
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-primary-700 dark:text-primary-300">System Design</span>
+                    <span class="text-green-600 dark:text-green-400 font-mono">85%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-primary-700 dark:text-primary-300">Problem Solving</span>
+                    <span class="text-green-600 dark:text-green-400 font-mono">92%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 92%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-primary-700 dark:text-primary-300">Team Leadership</span>
+                    <span class="text-green-600 dark:text-green-400 font-mono">80%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 80%"></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span class="text-primary-700 dark:text-primary-300">Agile / Scrum</span>
+                    <span class="text-green-600 dark:text-green-400 font-mono">88%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-fill" style="width: 88%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-primary-50 dark:bg-primary-950 border-t border-primary-200 dark:border-primary-700 py-12">
+        <div class="max-w-4xl mx-auto px-4">
+          <div class="text-center">
+            <div class="text-primary-600 dark:text-primary-400 font-mono mb-4">
+              <span class="terminal-bracket">&lt;</span> Built with Nuxt.js & Tailwind CSS <span class="terminal-bracket">/&gt;</span>
+            </div>
+            <div class="flex justify-center gap-6 mb-6">
+              <a href="#" class="text-primary-600 dark:text-primary-400 hover:text-green-600 dark:hover:text-green-400 transition">
+                <span class="font-mono">GitHub</span>
+              </a>
+              <a href="#" class="text-primary-600 dark:text-primary-400 hover:text-green-600 dark:hover:text-green-400 transition">
+                <span class="font-mono">LinkedIn</span>
+              </a>
+              <a href="#" class="text-primary-600 dark:text-primary-400 hover:text-green-600 dark:hover:text-green-400 transition">
+                <span class="font-mono">Twitter</span>
+              </a>
+              <a href="#" class="text-primary-600 dark:text-primary-400 hover:text-green-600 dark:hover:text-green-400 transition">
+                <span class="font-mono">Email</span>
+              </a>
+            </div>
+            <p class="text-primary-500 dark:text-primary-500 font-mono text-sm">
+              © 2024 egiiputra. All rights reserved. | <span class="text-green-600 dark:text-green-400">Type</span> something...
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
   </div>
 </template>
+
+<script setup lang="ts">
+const { isDark, toggleTheme } = useTheme()
+</script>
