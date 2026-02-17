@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen bg-white dark:bg-primary-900 transition-colors duration-300">
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white dark:bg-primary-800 bg-opacity-95 dark:bg-opacity-95 border-b border-primary-200 dark:border-primary-700 z-50 backdrop-blur-sm">
+    <nav class="fixed top-0 w-full bg-white dark:bg-primary-800 bg-opacity-95 dark:bg-opacity-95 z-50 backdrop-blur-sm">
       <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
         <NuxtLink to="/" class="text-2xl font-bold font-mono">
           <span class="terminal-bracket">&lt;</span><span>egiiputra</span><span class="terminal-bracket">/&gt;</span>
