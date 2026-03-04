@@ -1,11 +1,19 @@
-<template>
+---
+import Welcome from '../components/Welcome.astro';
+import Layout from '../layouts/Layout.astro';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
   <div class="min-h-screen bg-white dark:bg-primary-900 transition-colors duration-300">
     <!-- Navigation -->
     <nav class="fixed top-0 w-full bg-white dark:bg-primary-800 bg-opacity-95 dark:bg-opacity-95 z-50 backdrop-blur-sm">
       <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-        <NuxtLink to="/" class="text-2xl font-bold font-mono">
+        <a href="/" class="text-2xl font-bold font-mono">
           <span class="terminal-bracket">&lt;</span><span>egiiputra</span><span class="terminal-bracket">/&gt;</span>
-        </NuxtLink>
+        </a>
         <div class="flex gap-6 items-center">
           <div class="flex gap-6 font-mono text-sm">
             <a href="#home" class="text-primary-900 dark:text-primary-100 hover:text-green-600 dark:hover:text-green-400 transition">home</a>
@@ -520,8 +528,4 @@
       </footer>
     </main>
   </div>
-</template>
-
-<script setup lang="ts">
-const { isDark, toggleTheme } = useTheme()
-</script>
+</Layout>
