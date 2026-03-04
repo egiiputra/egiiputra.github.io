@@ -23,11 +23,11 @@ import Layout from '../layouts/Layout.astro';
             <a href="#skills" class="text-primary-900 dark:text-primary-100 hover:text-green-600 dark:hover:text-green-400 transition">skills</a>
           </div>
           <!-- Theme Toggle -->
-          <button @click="toggleTheme" class="p-2 rounded-lg bg-primary-100 dark:bg-primary-700 hover:bg-primary-200 dark:hover:bg-primary-600 transition">
-            <svg v-if="isDark" class="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+          <button id="theme-toggle" class="p-2 rounded-lg bg-primary-100 dark:bg-primary-700 hover:bg-primary-200 dark:hover:bg-primary-600 transition">
+            <svg id="moon-icon" class="w-5 h-5 text-yellow-500 hidden" fill="currentColor" viewBox="0 0 20 20">
               <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
             </svg>
-            <svg v-else class="w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
+            <svg id="sun-icon" class="w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v2a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.536l1.414 1.414a1 1 0 001.414-1.414l-1.414-1.414a1 1 0 00-1.414 1.414zm2.828-2.828l1.414-1.414a1 1 0 00-1.414-1.414l-1.414 1.414a1 1 0 001.414 1.414zm0-5.656l1.414 1.414a1 1 0 101.414-1.414l-1.414-1.414a1 1 0 10-1.414 1.414zM4.464 4.465l1.414-1.414a1 1 0 00-1.414-1.414L3.05 3.05a1 1 0 001.414 1.414z" clip-rule="evenodd"></path>
             </svg>
           </button>
@@ -529,3 +529,40 @@ import Layout from '../layouts/Layout.astro';
     </main>
   </div>
 </Layout>
+
+<script>
+  // Theme switcher functionality
+  const themeToggle = document.getElementById('theme-toggle');
+  const moonIcon = document.getElementById('moon-icon');
+  const sunIcon = document.getElementById('sun-icon');
+  const html = document.documentElement;
+
+  // Check for saved theme preference or default to light mode
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  
+  // Apply the current theme on page load
+  if (currentTheme === 'dark') {
+    html.classList.add('dark');
+    moonIcon?.classList.remove('hidden');
+    sunIcon?.classList.add('hidden');
+  } else {
+    html.classList.remove('dark');
+    moonIcon?.classList.add('hidden');
+    sunIcon?.classList.remove('hidden');
+  }
+
+  // Toggle theme on button click
+  themeToggle?.addEventListener('click', () => {
+    if (html.classList.contains('dark')) {
+      html.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+      moonIcon?.classList.add('hidden');
+      sunIcon?.classList.remove('hidden');
+    } else {
+      html.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      moonIcon?.classList.remove('hidden');
+      sunIcon?.classList.add('hidden');
+    }
+  });
+</script>
