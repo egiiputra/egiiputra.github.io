@@ -1,22 +1,16 @@
 {
-  "name": "test",
+  "name": "",
   "type": "module",
-  "private": true,
+  "version": "0.0.1",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.18",
-    "nuxt": "^4.3.1",
-    "tailwindcss": "^4.1.18",
-    "vue": "^3.5.28",
-    "vue-router": "^4.6.4"
-  },
-  "devDependencies": {
-    "@nuxtjs/color-mode": "^4.0.0"
+    "@tailwindcss/vite": "^4.2.1",
+    "astro": "^5.17.1",
+    "tailwindcss": "^4.2.1"
   }
 }
