@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Belibis UTM",
+    "description": "Learning Management System app",
+    "url": "",
+    "highlights": [
+      "Developed application features including custom class banners, class member invitations, comment posting, and assignment submissions.",
+      "Conducted testing of web application features to ensure proper functionality.",
+      "Secured text input against XSS and SQL injection attacks."
+    ],
+    "technologies": [
+      "PHP",
+      "CodeIgniter",
+      "Bootstrap",
+      "jQuery",
+      "MySQL"
+    ]
+  }
+]

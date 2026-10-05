@@ -1,0 +1,65 @@
+[
+  {
+    "company": "PT Kedata Indonesia Digital",
+    "role": "Fullstack Developer",
+    "location": "D.I. Yogyakarta (Hybrid)",
+    "period": "April 2026 – Present",
+    "highlights": [
+      "Translated Figma designs into high-fidelity Next.js applications, ensuring pixel-perfect accuracy and full mobile responsiveness across all devices.",
+      "Integrated Internationalization (i18n) to enhance accessibility and support a global audience, specifically catering to English-speaking users.",
+      "Developed seamless data layers by connecting the frontend to both RESTful and GraphQL APIs.",
+      "Engineered a library of modular, reusable components to streamline development and significantly reduce code redundancy."
+    ],
+    "technologies": [
+      "JavaScript",
+      "React.js",
+      "Next.js",
+      "TailwindCSS",
+      "PHP",
+      "Laravel",
+      "Docker",
+      "GitHub Actions"
+    ]
+  },
+  {
+    "company": "PT Kedata Indonesia Digital",
+    "role": "Frontend Developer",
+    "location": "D.I. Yogyakarta (Hybrid)",
+    "period": "Oct 2025 – April 2026",
+    "highlights": [
+      "Translated Figma designs into high-fidelity Next.js applications, ensuring pixel-perfect accuracy and full mobile responsiveness across all devices.",
+      "Integrated Internationalization (i18n) to enhance accessibility and support a global audience, specifically catering to English-speaking users.",
+      "Developed seamless data layers by connecting the frontend to both RESTful and GraphQL APIs.",
+      "Engineered a library of modular, reusable components to streamline development and significantly reduce code redundancy."
+    ],
+    "technologies": [
+      "JavaScript",
+      "React.js",
+      "Next.js",
+      "TailwindCSS",
+      "PHP",
+      "Laravel",
+      "Docker",
+      "GitHub Actions"
+    ]
+  },
+  {
+    "company": "Self-Employed",
+    "role": "Freelance Web Developer",
+    "location": "Remote",
+    "period": "Jan 2023 – Oct 2025",
+    "highlights": [
+      "Developed new features in client web applications, fixed bugs, and improved performance through advanced query optimization.",
+      "Gathered and analyzed client requirements to design and implement tailored application features.",
+      "Built a computer-based exam system for Pekan Sosiologi Nasional 2023 at Universitas Trunojoyo Madura."
+    ],
+    "technologies": [
+      "PHP",
+      "Laravel",
+      "CodeIgniter",
+      "JavaScript",
+      "jQuery",
+      "MySQL"
+    ]
+  }
+]

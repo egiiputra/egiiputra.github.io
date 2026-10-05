@@ -1,0 +1,31 @@
+[
+  {
+    "category": "Languages",
+    "items": ["JavaScript", "TypeScript", "Python", "PHP", "Go"]
+  },
+  {
+    "category": "Technologies",
+    "items": [
+      "React.js",
+      "Next.js",
+      "Vue.js",
+      "Laravel",
+      "MySQL",
+      "PostgreSQL",
+      "GitHub",
+      "Postman",
+      "Figma"
+    ]
+  },
+  {
+    "category": "Tools & Infrastructure",
+    "items": [
+      "Nginx",
+      "GraphQL",
+      "REST API",
+      "Docker",
+      "Redis",
+      "Kubernetes"
+    ]
+  }
+]

@@ -1,0 +1,20 @@
+---
+import skills from '../data/skills.json';
+---
+
+<div class="space-y-5">
+  {
+    skills.map((group) => (
+      <div>
+        <p class="mb-2.5 text-sm font-semibold text-text">
+          {group.category}
+        </p>
+        <div class="flex flex-wrap gap-2">
+          {group.items.map((item) => (
+            <span class="chip-neutral">{item}</span>
+          ))}
+        </div>
+      </div>
+    ))
+  }
+</div>

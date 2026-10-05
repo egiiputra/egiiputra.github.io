@@ -1,46 +1,55 @@
-# Astro Starter Kit: Basics
+# personal-web
+
+A simple personal website built with [Astro](https://astro.build). All content
+lives in plain JSON and Markdown files — no CMS, no database.
+
+The default content is derived from [`cv.tex`](./cv.tex).
+
+## Content
+
+| File | Purpose |
+| --- | --- |
+| `src/data/profile.json` | Name, title, location, email, social links |
+| `src/content/about.md` | Markdown "About" section |
+| `src/data/experience.json` | Work history |
+| `src/data/projects.json` | Projects |
+| `src/data/education.json` | Education |
+| `src/data/skills.json` | Skill groups |
+| `src/data/certifications.json` | Certifications |
+
+Edit these files to update the site — no component changes required.
+
+> The email and social links in `profile.json` are placeholders copied from the
+> template. Update them with your real details.
+
+## Commands
+
+| Command | Action |
+| --- | --- |
+| `npm install` | Install dependencies |
+| `npm run dev` | Start the dev server at `localhost:4321` |
+| `npm run build` | Build the production site to `./dist` |
+| `npm run preview` | Preview the production build locally |
+
+## Deployment
+
+Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds the site
+and publishes it to GitHub Pages.
+
+One-time setup:
+
+1. Push this repository to GitHub.
+2. In **Settings → Pages**, set **Source** to **GitHub Actions**.
+3. Push to `main` (or run the workflow manually from the Actions tab).
+
+The workflow uses `actions/configure-pages` to inject the correct `site` and
+`base` values, so the site works whether it is served from a user page
+(`user.github.io`) or a project page (`user.github.io/repo`).
+
+### Local build with a custom base
+
+To reproduce the GitHub Pages build locally:
 
 ```sh
-pnpm create astro@latest -- --template basics
+SITE_URL=https://user.github.io BASE_PATH=/personal-web npm run build
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

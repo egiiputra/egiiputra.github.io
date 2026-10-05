@@ -1,0 +1,39 @@
+---
+import education from '../data/education.json';
+---
+
+<div class="divide-y divide-border">
+  {
+    education.map((school) => (
+      <article class="py-7 first:pt-0 last:pb-0">
+        <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+          <h3 class="text-base font-semibold tracking-tight">
+            {school.degree}
+          </h3>
+          <span class="text-xs font-medium whitespace-nowrap text-muted">
+            {school.period}
+          </span>
+        </div>
+
+        <p class="mt-1 text-sm text-muted">
+          {school.institution}
+          {school.location ? ` · ${school.location}` : ''}
+        </p>
+
+        {school.highlights.length > 0 && (
+          <ul class="mt-4 space-y-2 text-sm text-muted">
+            {school.highlights.map((item) => (
+              <li class="flex gap-2.5">
+                <span
+                  class="mt-[0.55rem] h-1.5 w-1.5 shrink-0 rounded-full bg-accent/60"
+                  aria-hidden="true"
+                />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </article>
+    ))
+  }
+</div>
